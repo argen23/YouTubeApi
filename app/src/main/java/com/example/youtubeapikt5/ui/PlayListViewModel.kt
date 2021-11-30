@@ -5,10 +5,10 @@ import androidx.lifecycle.ViewModel
 import com.example.youtubeapikt5.models.PlayList
 import com.example.youtubeapikt5.repository.Repository
 
-class PlayListViewModel : ViewModel() {
+class PlayListViewModel(private val repository: Repository) : ViewModel() {
 
     fun getPlayList() : LiveData<PlayList> {
-        return Repository().createCall()
+        return repository.createCall()
     }
 
 }

@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/layout/activity_internet_check.xml" value="0.175" />
+        <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/layout/fragment_first.xml" value="0.209375" />
         <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/layout/item_playlist.xml" value="0.18" />
+        <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/layout/no_internet_check.xml" value="0.1527777777777778" />
       </map>
     </option>
   </component>

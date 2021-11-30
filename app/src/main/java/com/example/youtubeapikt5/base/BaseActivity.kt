@@ -1,7 +1,6 @@
 package com.example.youtubeapikt5.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 
@@ -11,8 +10,8 @@ abstract class BaseActivity<VB: ViewBinding>: AppCompatActivity() {
 
     protected abstract fun inflateViewBinding() :VB
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         viewBinding = inflateViewBinding()
         setContentView(viewBinding.root)
         checkInternet()

@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.youtubeapikt5">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
         android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
         android:minSdkVersion="30"
@@ -15,9 +14,14 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.YouTubeApikt5">
+        <activity
+            android:name=".utils.InternetCheckActivity"
+            android:exported="false"
+            android:theme="@style/Theme.YouTubeApikt5.NoActionBar" />
         <activity
             android:name=".ui.PlayListActivity"
             android:exported="true">

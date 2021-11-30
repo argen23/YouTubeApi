@@ -3,7 +3,7 @@ package com.example.youtubeapikt5.models
 data class PlayList(
     var kind: String,
     var etag: String,
-    var items: List<Items>,
+    var items: ArrayList<Items>,
     var pageInfo: PageInfo
 )
 
