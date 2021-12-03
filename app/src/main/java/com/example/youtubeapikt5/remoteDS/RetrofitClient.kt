@@ -11,17 +11,13 @@ import java.util.concurrent.TimeUnit
 
 val networkModule = module {
     single { provideRetrofit(get()) }
-    factory { provideHttpClient() }
+    factory { provideOkHttpClient() }
     factory { provideApi(get()) }
 }
 
-
-fun provideApi(retrofit: Retrofit): YouTubeApi = retrofit.create(YouTubeApi::class.java)
-
-
-fun provideHttpClient(): OkHttpClient {
-    val interceptor = HttpLoggingInterceptor()
-    interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+    fun provideOkHttpClient(): OkHttpClient {
+        val interceptor = HttpLoggingInterceptor()
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
 
     return OkHttpClient().newBuilder()
         .connectTimeout(30, TimeUnit.SECONDS)
@@ -29,12 +25,13 @@ fun provideHttpClient(): OkHttpClient {
         .readTimeout(30, TimeUnit.SECONDS)
         .addInterceptor(interceptor)
         .build()
-}
+    }
 
-fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
-    return Retrofit.Builder()
-        .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl(BASE_URL)
-        .client(okHttpClient)
-        .build()
-}
+        fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
+            return Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL)
+            .client(okHttpClient)
+            .build()
+    }
+    fun provideApi(retrofit: Retrofit) : YouTubeApi = retrofit.create(YouTubeApi::class.java)

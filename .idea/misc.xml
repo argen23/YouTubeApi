@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/font/basic.xml" value="0.14351851851851852" />
+        <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/font/fjalla_one.xml" value="0.14351851851851852" />
+        <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/font/noto_sans.xml" value="0.14351851851851852" />
         <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/layout/activity_internet_check.xml" value="0.175" />
         <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/layout/activity_play_list_detail.xml" value="0.22" />
         <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/layout/fragment_first.xml" value="0.209375" />
+        <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/layout/item_detail_playlist.xml" value="0.10092592592592593" />
         <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/layout/item_playlist.xml" value="0.18" />
         <entry key="..\:/Users/Notnik_kg/AndroidStudioProjects/YouTubeApikt5/app/src/main/res/layout/no_internet_check.xml" value="0.1527777777777778" />
       </map>

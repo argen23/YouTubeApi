@@ -28,14 +28,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:background="#CC000000"
-                android:text="@string/playlist"
-                android:textColor="@color/white"
-                android:textSize="12sp"
                 android:paddingTop="4dp"
                 android:paddingBottom="4dp"
-                android:layout_alignParentBottom="true"
-                android:textAlignment="textEnd"/>
+                android:text="@string/playlist"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
 
 
         </RelativeLayout>

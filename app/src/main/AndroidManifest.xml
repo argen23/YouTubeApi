@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.youtubeapikt5">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
         android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
@@ -19,11 +20,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YouTubeApikt5">
         <activity
-            android:name=".utils.InternetCheckActivity"
-            android:exported="false"
-            android:theme="@style/Theme.YouTubeApikt5.NoActionBar" />
+            android:name=".ui.playListDetail.PLayListDetailActivity"
+            android:exported="false"/>
         <activity
-            android:name=".ui.PlayListActivity"
+            android:name=".ui.playListActivity.PlayListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,36 +1,27 @@
 package com.example.youtubeapikt5.repository
 
-import android.util.Log
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.liveData
 import com.example.youtubeapikt5.models.PlayList
 import com.example.youtubeapikt5.objects.Constant
 import com.example.youtubeapikt5.remoteDS.YouTubeApi
-import retrofit2.Call
-import retrofit2.Callback
+import kotlinx.coroutines.Dispatchers
 import retrofit2.Response
 
 class Repository(private val youTubeApi: YouTubeApi) {
 
 
-     fun createCall(): LiveData<PlayList> {
-        val data = MutableLiveData<PlayList>()
+     fun createCall(): LiveData<Response<PlayList>> = liveData(Dispatchers.IO) {
+        val response = youTubeApi.getPLayLists(
+            Constant.PART, Constant.CHANNEL_ID, Constant.API_KEY,Constant.MAX_RESULT)
+         emit(response)
+    }
 
-        youTubeApi.getPLayLists(Constant.PART, Constant.CHANNEL_ID, Constant.API_KEY,Constant.MAX_RESULT)
-            .enqueue(object : Callback<PlayList> {
+    fun createDetailCall(id : String): LiveData<Response<PlayList>> = liveData(Dispatchers.IO) {
 
-                override fun onResponse(call: Call<PlayList>, response: Response<PlayList>) {
-                    if (response.isSuccessful && response.body() != null){
-                        data.value = response.body()
-                    }
-                }
-
-                override fun onFailure(call: Call<PlayList>, t: Throwable) {
-                    print(t.stackTrace)
-                }
-
-            })
-        return data
+        val response = youTubeApi.getDetailPLayList(
+            Constant.PART, id ,Constant.API_KEY,Constant.MAX_RESULT)
+        emit(response)
     }
 
 }

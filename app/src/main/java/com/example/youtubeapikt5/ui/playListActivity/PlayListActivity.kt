@@ -1,22 +1,24 @@
-package com.example.youtubeapikt5.ui
+package com.example.youtubeapikt5.ui.playListActivity
 
 import android.annotation.SuppressLint
-import android.util.Log
-import android.widget.Toast
+import android.content.Intent
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.youtubeapikt5.base.BaseActivity
 import com.example.youtubeapikt5.databinding.ActivityMainBinding
 import com.example.youtubeapikt5.models.Items
+import com.example.youtubeapikt5.models.PlayList
+import com.example.youtubeapikt5.ui.playListDetail.PLayListDetailActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
 
 
 @SuppressLint("NotifyDataSetChanged")
 class PlayListActivity : BaseActivity<ActivityMainBinding>() {
 
     private val viewModel: PlayListViewModel by viewModel()
-    private var list = arrayListOf<Items>()
-    private val adapter by lazy { PlayListAdapter(list, this::initClick) }
+    private lateinit var playList: PlayList
+    private val adapter by lazy { PlayListAdapter(playList, this::initClick) }
 
     override fun setUi() {
 
@@ -28,23 +30,31 @@ class PlayListActivity : BaseActivity<ActivityMainBinding>() {
                 LinearLayoutManager(this@PlayListActivity, LinearLayoutManager.VERTICAL, false)
             adapter = this@PlayListActivity.adapter
         }
-
+        adapter.notifyDataSetChanged()
 
     }
 
     override fun setupLiveData() {
 
         viewModel.getPlayList().observe(this) {
-            list = it.items
+            if(it.body()!=null)
+            playList = it.body()!!
             initRecyclerView()
 
-            adapter.notifyDataSetChanged()
+
+        }
+
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun initClick(id: Items) {
+        Intent(this, PLayListDetailActivity::class.java).apply {
+            putExtra(PLAYLIST, id.id)
+            startActivity(this)
+
         }
     }
 
-    private fun initClick(id: String) {
-        Toast.makeText(this, id, Toast.LENGTH_SHORT).show()
-    }
 
     override fun checkInternet() {
 
@@ -57,6 +67,7 @@ class PlayListActivity : BaseActivity<ActivityMainBinding>() {
     override fun setupClickListener() {
 
     }
-
-
+    companion object{
+        const val PLAYLIST = "playlist"
+    }
 }

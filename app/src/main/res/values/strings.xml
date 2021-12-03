@@ -8,9 +8,15 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="video_series">video series</string>
+
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="todo">TODO</string>
     <string name="try_again">Try again</string>
+    <string name="title_water_first">emotional well being healing practices for children</string>
+    <string name="title_water_second">in this series we break down the impact of displacement instability violence and trauma in children and offer exercises to support children in their healing journey</string>
+    <string name="_12_video_series">12 video series</string>
+    <string name="fab">fab</string>
 </resources>
